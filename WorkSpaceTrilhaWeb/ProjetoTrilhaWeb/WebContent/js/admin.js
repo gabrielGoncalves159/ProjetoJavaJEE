@@ -17,6 +17,7 @@ $(document).ready(function() {
 				var msg = "Houve um erro ao encontrar a página: "+ info.status + " - " + info.statusText;
 				$("section").html(msg);
 			}
-		})
+		});
 	}
+	
 });
