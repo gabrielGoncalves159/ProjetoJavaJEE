@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="contato.css">
+<script	type="text/javascript">
+function validaCamposContato(){
+	var nome = document.frmcontato.txtnome.value;
+	var expRegNome = new RegExp("^[A-zÀ-ü]{3,}([ ]{1}[A-zÀ-ü]{2,})+$");
+	
+	if(!expRegNome.test(nome)){
+		alert("Prencha o campo 'NOME' com dados validos!");
+		document.frmcontato.txtnome.focus();
+		return false;
+	}
+	
+	var endereco = document.frmcontato.txtendereco.value;
+	var expRegEndereco = new RegExp("^[A-zÀ-ü]{3,}([ ]{1}[A-zÀ-ü]{2,})+$");
+	
+	if(!expRegEndereco.test(endereco)){
+		alert("Preencha o campo 'Endereço' com dados validos!");
+		document.frmcontato.txtendereco.focus();
+		return false;
+	}
+	
+	var fone = document.frmcontato.txtfone.value;
+	var expRegFone = new RegExp("^[(]{1}[0-9]{2}[)]{1}[0-9]{4}[-]{1}[0-9]{4}$");
+	
+	if(!expRegFone.test(fone)){
+		alert("Preencha o campo 'Telefone' com dados validos!");
+		document.frmcontato.txtfone.focus();
+		return false
+	}
+	
+	return true;
+}
+</script>
+</head>
+<body>
+	<form name="frmcontato" onsubmit="return validaCamposContato()" action="insereContato">
+		<fieldset class="contato">
+			<legend>Contato: </legend>
+			<label for="nome">Nome: </label>
+			<input type="text" name="txtnome" id="nome" placeholder="Fulano De Tal"></input>
+			<label for="endereco">Endereço: </label>
+			<input type="text" name="txtendereco" id="endereco" placeholder="Rua Do Fulano De Tal"></input>
+			<label for="fone">Telefone: </label>
+			<input type="text" name="txtfone" id="fone" placeholder="(DD)0000-0000"></input>
+			<button type="submit">Enviar</button><button type="reset">Limpar</button>
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+/* Configuração geral do corpo de página */
+
+body{
+	margin: 0 auto;
+	font-family: "Century Gothic", sans-serif;
+}
+
+/***************************************
+			  Layout geral
+***************************************/
+
+/********** 	Cabeçalho	***********/
+
+header{
+	height: 120px; /*altura*/ /* NOVO */ 
+	background-color: #008eb6; /* cor de fundo */
+	position: -webkit-sticky; /* posição do elemento da página */ /* NOVO */
+	position: sticky; /* posição do elemento da página relativa */ /* NOVO */
+	top: 0px; /* posição vertical de um elemento */ /* NOVO */
+}
+
+header img{
+	float: left; /* posiciona a esquerda */
+	height: 100px; /* altura */ /* NOVO */
+	width: 100px; /* largura */ /* NOVO */
+	margin: 10px; /* área da margem */
+}
+
+header h1{
+	float: left; /* pocisiona flutuante a esquerda */
+	margin: 30px 0 15px 30px; /* área da margem */ /* NOVO */
+	font-size: 40px; /* tamanho da fonte *//* NOVO */
+	color: #ffffff; /* cor */
+}
+
+/********** 	MENU	***********/
+
+nav{
+	clear: both; /* colocara o elemento flutuante para baixo e limpara a esquerda e a direita */
+	width: 70%; /* largura */ /* NOVO */ 
+	display: inline-block;/* display - especifica o tipo de caixa de renderização, inline-block - O elemento gera uma caixa de elemento de bloco que fluirá com o conteúdo circundante */ /* NOVO */
+	margin: 0px auto; /* área da margem */ 
+	/* saiu o height */
+}
+
+nav a{
+	color: white; /* cor */
+	font-weight: bold; /* fonte em negrito */ /* NOVO */
+	letter-spacing: 1px; /* espaçamento	entre caracteres */ /* NOVO */
+	text-decoration: none; /* Sem decoração */
+	text-align: center; /* alinhamento do dexto ao centro */
+}
+
+nav .opcao{
+	float: left; /* ponto flutuante a esquerda */
+	width: 19%; /* largura */ /* NOVO */
+	background-color: #005f89; /* cor de fundo */ /* NOVO */
+	margin: 0 0.5%; /* área da margem */ /* NOVO */
+	font-size: 16px; /* tamanho da fonte */ /* NOVO */ 
+}
+
+nav .option:hover{
+	background-color: #83afd3; /* cor de fundo */
+}
+
+/* Dropdown baseado em W3Schools- https://www.w3schools.com/css/css_dropdowns.asp */ /* NOVO */
+/* Usado para posicionar o conteúdo dropdown */
+.dropdown {
+	position: relative; /*  */
+	display: inline-block; /* display - especifica o tipo de caixa de renderização, inline-block - O elemento gera uma caixa de elemento de bloco que fluirá com o conteúdo circundante */ /* NOVO */
+}
+
+/* Conteúdo Dropdown (oculto por padrão) */
+.dropdown-content {
+	display: none; /* sem caixa de renderização */
+	position: absolute; /* posiciona de acordo com o elemento pai */
+	backgrond-color: #005f89; /* cor de fundo */
+	z-index: 1; /* define a ordem z de um elemento posicionado e seus descendentes */
+	width: 100%; /* largura */ 
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+	display: block; /* renderiza em bloco */
+}
+
+/* Mudar cor dos links dropdown	ao passar mouse */
+.dropdown-content a:hover{
+	background-color: #83afd3; /* cor de fundo */
+}
+
+/* Mostrar o menu dropdown menu ao passar mouse */
+.dropdown:hover .dropdown-content {
+	display: block;	/* renderiza em bloco */
+}
+
+/*****		Seção		*****/
+section{
+	clear:both; 
+	min-height:460px; /* altura minima de um elemento */ /* NOVO */
+	width: 100%; /* largura */ 
+	margin-top:0px; /* área da margem */ 
+}
+
+/*****		Rodapé		*****/
+footer{
+	background-color:#005f89; /* cor de fundo */
+	color: #ffff; /* cor */
+	text-align:center; /* alinhamento de texto ao centro */
+	padding:10px; /* área de preenchimento de um elemento */
+}

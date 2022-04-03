@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang= "pr-br">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Site do Fã-Clube do The Strokes">
+<meta name="keywords" content="Fã-Clube, The Strokes, Banda de Rock Alternativo">
+<meta name="author" content="Gabriel Gonçalves">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fã-Clube The Strokes</title>
+<link rel="stylesheet" type="text/css" href="../../css/site.css">
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="../../js/site.js"></script>
+</head>
+<body>
+	<header>
+
+	</header>
+	<nav>
+
+	</nav>
+	<section>
+		<h2>Faça Parte do nosso Fã Clubo!</h2>
+		<h4>Cadastre-se a baixo e fique por dentro de novidades nobre a banda!</h4>
+		<form name="frmcadastro" method="post" action="#" onsubmit="return validarCampos()">
+			<fieldset class="formularioCadastro">
+				<legend>Dados do Cadastro</legend>
+				<label for="nome">Nome: </label>
+				<input type="text" name="txtnome" id="nome" placeholder="Fulâno Détal">
+				<label for="idade">Data de Nasc:</label>
+				<input type="date" name="txtidade" id="idade">
+				<label for="sexo">Sexo: </label>
+				<select name="selsexo">
+					<option value="">Selecione</option>
+					<option value="M">Masculino</option>
+					<option value="F">Feminino</option>
+					<option value="O">Outros</option>
+				</select>
+				<label for="fone">Telefone: </label>
+				<input type="tel" name="txtfone" id="fone" placeholder="(DDD)0 0000-0000">
+				<label for="email">E-mail: </label>
+				<input type="email" name="txtemail" id="email" placeholder="exemplo@email.com">
+				<label for="sugestao">Deixe uma Sugestão: </label>
+				<textarea name="txasugestao" id="sugestao"></textarea>
+				<button type="reset">Cancelar</button><button type="submit">Enviar</button>
+			</fieldset>
+		</form>
+	</section>
+	<footer></footer>
+</body>
+</html>
