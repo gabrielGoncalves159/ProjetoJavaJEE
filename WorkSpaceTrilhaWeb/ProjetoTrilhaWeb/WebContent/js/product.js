@@ -5,9 +5,10 @@ $(document).ready(function() {
 	// Carrega as marcas registradas no BD no select do
 	// formulário de inserir
 	COLDIGO.produto.carregarMarcas = function() {
+		
 		$.ajax({
 			type : "GET",
-			url : "/ProjetoTrilhaWeb/rest/marca/buscar",
+			url : COLDIGO.PATH + "marca/buscar",
 			success : function(marcas) {
 
 			if (marcas != "") {
@@ -45,16 +46,50 @@ $(document).ready(function() {
 				COLDIGO.exibirAviso("Erro ao buscar as marcas: "+ info.status+ " - "+ info.statusText);
 
 				$("#selMarca").html("");
-			var option = document.createElement("option");
-			option.setAttribute("value", "");
-			option.innerHTML = ("Erro ao carregar marcas!");
-			$("#selMarca").append(option);
-			$("#selMarca").addClass("aviso");
+				var option = document.createElement("option");
+				option.setAttribute("value", "");
+				option.innerHTML = ("Erro ao carregar marcas!");
+				$("#selMarca").append(option);
+				$("#selMarca").addClass("aviso");
 			}
 		});
 
 	}
 
 	COLDIGO.produto.carregarMarcas();
+	
+	COLDIGO.produto.cadastrar = function(){
+		
+		var produto = new Object();
+
+		produto.categoria = document.frmAddProduto.categoria.value;
+		produto.marcaId = document.frmAddProduto.marcaId.value;
+		produto.modelo = document.frmAddProduto.modelo.value;
+		produto.capacidade = document.frmAddProduto.capacidade.value;
+		produto.valor = document.frmAddProduto.valor.value;
+		
+		if((produto.categoria == "") || (produto.marcaId == "") || (produto.modelo == "")
+			|| (produto.capacidade == "") || (produto.valor == "")){
+			COLDIGO.exibirAviso("Preencha todos os campos!");
+			
+		}else {
+			
+			$.ajax({
+				type: "POST",
+				url: COLDIGO.PATH + "produto/inserir",
+				data:JSON.stringify(produto),
+				success: function (msg) {
+					COLDIGO.exibirAviso(msg);
+					$("#addProduto").trigger("reset");
+				},
+				error: function (into) {
+					COLDIGO.exibirAviso("Erro ao cadastrar um novo produto: "+ info.status + " - " + info.statusText);
+				}
+				
+			});
+			
+		}
+		
+	}
 
 });
