@@ -76,7 +76,7 @@ nav .option:hover{
 .dropdown-content {
 	display: none; /* sem caixa de renderização */
 	position: absolute; /* posiciona de acordo com o elemento pai */
-	backgrond-color: #005f89; /* cor de fundo */
+	background-color: #005f89; /* cor de fundo */
 	z-index: 1; /* define a ordem z de um elemento posicionado e seus descendentes */
 	width: 100%; /* largura */ 
 }
@@ -133,13 +133,14 @@ section h2, section h3{
 	width: 500px;
 }
 
+.frmFiltrar{
+	width: 350px;
+}
+
 .frmInserir label{
 	width: 200px;
 }
 
-.frmFiltrar{
-	width: 350px;
-}
 
 .frmInserir input, .frmInserir textarea, .frmInserir select{
 	width: 300px;
@@ -173,8 +174,8 @@ section h2, section h3{
 
 .listaRegistros table{
 	border: 1px solid #000;
-	border-collapse: collapse;
-	margir: 0 auto;
+	border-collapse: collapse; /*Define se as bordas das tabelas devem ser recolhidas*/
+	margin: 0 auto;
 	min-width: 50%;
 }
 
@@ -212,10 +213,13 @@ section h2, section h3{
 	padding: 0px;
 	width: 20px;
 	height: 20px;
-	cursor: pointer;
+	cursor: pointer; /*define o formato do cursor do mouse sobre o elemento*/
 }
 
-/*********** Modal ************/
-#modalAviso{
+/*********** Modais ************/
+#modalAviso, .modalEditar, .modalExcluir{
 	display: none;
+}
+.txtModalExcluir{
+ 	font-size: 10px;
 }
