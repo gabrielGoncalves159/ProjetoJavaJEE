@@ -1,0 +1,49 @@
+<script src="../../js/marca.js"></script>
+
+<h2>Registro de Marcas</h2>
+<form name="frmMarca" id="frmAdicionarMarca" class="frmInserirMarca">
+	<fieldset>
+		<legend>Nova Marca</legend>
+			<table>
+				<tr>
+					<th>Nome da Marca</th>
+					<td>
+						<input type="text" name="nomeMarca">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button type="reset">Limpar</button><button type="button" onclick="COLDIGO.marca.cadastrarMarca()">Cadastrar</button>
+					</td>
+				</tr>
+			</table>
+	</fieldset>
+</form>
+<h3>Marcas registradas</h3>
+<form id="filtrarMarca" class="frmFiltrarMarca">
+	<fieldset>
+		<legend>Filtrar</legend>
+		<input type="text" name="txtbusca" id="campoBuscarMarca" placeholder ="Pesquise a marca">
+		<button type="button" onclick="COLDIGO.marca.buscarMarca()">Buscar</button>
+	</fieldset>
+</form>
+<div id="listaDeMarcas" class="listaRegistroMarcas">
+</div>
+<div id="modalExcluirMarca" class="excluiMarca">
+	<form class="txtModalExcluirMarca">
+		<h1>Deseja excluir essa marca?</h1>
+	</form>
+</div>
+<div id="modalEditaMarca" class="modalEditarMarca">
+	<form name="frmEditaMarca" id="editaMarca" class="frmEditarMarca">
+		<table>
+			<tr>
+				<th>Nome da Marca</th>
+				<td>
+					<input type="text" name="nomeMarca">
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" name="idMarca">
+	</form>
+</div>
